@@ -1,20 +1,20 @@
 package org.alvheim.sphinx.entities;
 
-import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "student")
-public class Student {
+@Table(name = "educator")
+public class Educator {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,19 +35,13 @@ public class Student {
   @NotBlank
   private String lastName;
 
-  @Column(name = "username", unique = true)
-  @Size(max = 255)
+  @Column(name = "type")
   @NotBlank
-  private String username;
+// TODO protection
+  private String type;
 
-//  @Column(name = "birthday")
-//  private LocalDate birthday;
-
-  @Column(name = "mobile_number", unique = true)
+  @Column(name = "email", unique = true)
+  @Email
   @NotBlank
-  private String mobileNumber;
-
-  @Column(name = "additional_mobile_number", unique = true)
-  private String additionalMobileNumber;
-
+  private String email;
 }
