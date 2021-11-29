@@ -37,8 +37,11 @@ public class User {
   @Column(name = "last_name", nullable = false)
   private String lastName;
 
-  @Column(name = "username", unique = true, nullable = false)
-  private String username;
+  @Column(name = "email", unique = true, nullable = false)
+  private String email;
+
+  @Column(name = "password", nullable = false)
+  private String password;
 
   @Column(name = "birthday")
   private LocalDate birthday;
