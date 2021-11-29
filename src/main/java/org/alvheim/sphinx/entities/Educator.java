@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -21,27 +19,20 @@ public class Educator {
   @Column(name = "id")
   private Long id;
 
-  @Column(name = "first_name")
-  @Size(max = 255)
-  @NotBlank
+  @Column(name = "first_name", nullable = false)
   private String firstName;
 
   @Column(name = "middle_name")
-  @Size(max = 255)
   private String middleName;
 
-  @Column(name = "last_name")
-  @Size(max = 255)
-  @NotBlank
+  @Column(name = "last_name", nullable = false)
   private String lastName;
 
-  @Column(name = "type")
-  @NotBlank
-// TODO protection
+  @Column(name = "type", nullable = false)
+// TODO protection (what protection, CARL?)
   private String type;
 
-  @Column(name = "email", unique = true)
+  @Column(name = "email", unique = true, nullable = false)
   @Email
-  @NotBlank
   private String email;
 }

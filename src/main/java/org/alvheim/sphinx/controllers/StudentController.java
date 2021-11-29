@@ -20,12 +20,12 @@ public class StudentController {
   }
 
   @GetMapping
-  public List<Student> getStudents() {
+  public List<Student> findAll() {
     return studentService.getStudents();
   }
 
-  @PostMapping("/new")
-  public Student addStudent(@RequestBody Student newStudent) {
+  @PostMapping
+  public Student save(@RequestBody Student newStudent) {
     return studentService.addStudent(newStudent);
   }
 }
