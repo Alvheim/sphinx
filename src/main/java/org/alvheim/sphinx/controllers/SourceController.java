@@ -20,12 +20,12 @@ public class SourceController {
   }
 
   @GetMapping
-  public List<Source> getSources() {
+  public List<Source> findAll() {
     return sourceService.getSources();
   }
 
-  @PostMapping("/new")
-  public Source addSources(@RequestBody Source source) {
+  @PostMapping
+  public Source save(@RequestBody Source source) {
     return sourceService.addSource(source);
   }
 

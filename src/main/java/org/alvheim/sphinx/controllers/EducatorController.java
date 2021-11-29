@@ -20,12 +20,12 @@ public class EducatorController {
   }
 
   @GetMapping
-  public List<Educator> getEducators() {
+  public List<Educator> findAll() {
     return educatorService.getEducators();
   }
 
-  @PostMapping("/new")
-  public Educator addEducator(@RequestBody Educator newEducator){
+  @PostMapping
+  public Educator save(@RequestBody Educator newEducator){
     return educatorService.addEducator(newEducator);
   }
 
