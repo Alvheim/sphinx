@@ -1,7 +1,7 @@
 package org.alvheim.sphinx.services;
 
 import java.util.List;
-import org.alvheim.sphinx.entities.Source;
+import org.alvheim.sphinx.entities.Resource;
 import org.alvheim.sphinx.repositories.SourceRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +14,11 @@ public class SourceService {
     this.sourceRepository = sourceRepository;
   }
 
-  public List<Source> getSources() {
+  public List<Resource> getSources() {
     return sourceRepository.findAll();
   }
 
-  public Source addSource(Source source) {
-    return sourceRepository.save(source);
+  public Resource addSource(Resource resource) {
+    return sourceRepository.save(resource);
   }
 }
