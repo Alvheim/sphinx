@@ -1,7 +1,7 @@
 package org.alvheim.sphinx.controllers;
 
 import java.util.List;
-import org.alvheim.sphinx.entities.Source;
+import org.alvheim.sphinx.entities.Resource;
 import org.alvheim.sphinx.services.SourceService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,13 +20,13 @@ public class SourceController {
   }
 
   @GetMapping
-  public List<Source> findAll() {
+  public List<Resource> findAll() {
     return sourceService.getSources();
   }
 
   @PostMapping
-  public Source save(@RequestBody Source source) {
-    return sourceService.addSource(source);
+  public Resource save(@RequestBody Resource resource) {
+    return sourceService.addSource(resource);
   }
 
 }
