@@ -1,148 +1,424 @@
-# Bussiness Objects
+# Система Управління Інтерактивними Курсами (Interactive Course Management System)
 
-## Component-Object: KC-Student
+## Glossary
+Знання – це сукупність числових даних, фактів, образів, правил, закономірностей тощо.<br>
+Уміння – це здатність людини мобілізувати знання для виконання дій з метою досягнення поставленої цілі.<br>
+Навичка – це уміння, доведене до автоматизму.<br>
+Навчальний матеріал – сукупність знань, умінь та навичок на певну тематику.<br>
+Навчальний процес – це процес взаємодії вчителя та учня, в результаті якого учень засвоює навчальний матеріал.<br>
+Навчальне заняття – це зовнішнє вираження навчального процесу. Форма навчального заняття характеризується:<br>
+- різноманітністю навчальних дій;<br>
+- порядком навчальних дій;<br>
+- тривалістю навчальних дій;<br>
+- тривалістю перерв між навчальними діями.<br>
+Курс – серія логічно зв’язаних навчальних занять. Курс характеризується:<br>
+- кількість навчальних занять;<br>
+- переходами між навчальними заняттями;<br>
+- часом навчального заняття;<br>
+- часом перерв між навчальними заняттями;<br>
+- зальним часом вивчення курсу.<br>
+Дерево курсів – це серія логічно зв’язаних курсів. Дисципліна характеризується:<br>
+- кількістю курсів;<br>
+- переходами між навчальними курсами;<br>
+- часом вивчення курсу;<br>
+- загальним часом вивчення дисципліни.<br>
+Інтерактивність – це принцип організації системи, при якому ціль досягається інформаційним обміном елементів цієї системи.<br>
+Управління – це цілеспрямований вплив на процеси для зміни їх протікання з метою досягнення бажаного результату.<br>
 
-### Attributes
+## Goal
+Створення ICM-системи, яка вирішує ряд завдань:<br>
+-збереження навчальних ресурсів;<br>
+-створення навчальних завдань;<br>
+-створення на основі навчальних ресурсів і завдань навчальних занять;<br>
+-створення загальнодоступних курсів на основі навчальних занять;<br>
+-управління процесом редагування курсів;<br>
+-зв'язування курсів в галузь освіти.<br>
+
+## Principles
+Автором курсу може бути будь-хто.<br>
+У кожного курсу безліч авторів.<br>
+У кожного курсу лише один модератор.<br>
+Перший автор - це модератор. Якщо модератор не приймає два тижні зміни, то він звільняється. Найактивніший автор стає модератором. Якщо найактивнішого автора немає, то посада модератор стає вакантною. Будь-який користувач може подати свою кандидатуру на посаду адміністратора. Через тиждень, вибраний випадковим чином, постає модератор. Адміністратор один. Звільняє субадміністраторів та модераторів. Призначає субадміністраторів. Не призначає модераторів. <br>
+Субадміністратори звільняють модераторів.<br>
+Субадміністраторів може бути безліч.<br>
+Адміністратор один. Звільняє субадміністраторів та модераторів. Призначає субадміністраторів. Не призначає модераторів. <br>
+Можна безкоштовно вивчати будь-який курс.<br>
+Фінансова модель: за реєстрацію або за підписку; відсоток від донатів авторам.<br>
+
+## Bussiness Objects
+
+### General View
+Participation Objects: User, UserAuthentication, UserAuthorisation, Permission.<br>
+Main Activity Objects: UserInWork, CourseParticipation, ResourceMetadata, Exercise, Lesson, LessonStructure, Сourse, СourseStructure, СourseTree, СourseTreeStructure.<br>
+Additional Activity Objects: TransactionHistory, Notification, NotificationInbox, ChannelOption, MessagePattern, MessageCreator.<br>
+
+Actors: SuspiciousUser (Low Trust Factor), User (Good Trust Factor), BoundedUser (Broke the Rules), Moderator#ObjectType#ObjectID (Moderator for Object with Type and ID), SubAdministrator, Administrator.<br>
+
+### User
+
+#### Attributes
 
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
-| Student ID | Унікальний ідентифікатор студента в системі. |
-| First Name | Ім’я студента. |
-| Middle Name | По-батькові студента. |
-| Last Name | Прізвище студента. |
-| Username | Псевдонім студента. |
-| Birthday | Дата народження. |
-| Email | Електронна адреса студента. |
-| Mobile Number | Номер телефону студента. |
-| CommunicationChannels | Як можна зв'язатися з студентом: {channel: channel_value; channel: channel_value}. |
+| User ID | Унікальний ідентифікатор користувача в системі. |
+| First Name | Ім’я користувача. |
+| Middle Name | По-батькові користувача. |
+| Last Name | Прізвище користувача. |
+| Username | Псевдонім користувача. |
+| Birthday | Дата народження користувача. |
+| Email | Електронна адреса користувача. |
+| Mobile Number | Номер телефону користувача. |
+| CommunicationChannels | Додаткові канали зв'язку з користувачем: {channel: channel_value; channel: channel_value}. |
+| AcademicDegree | Рівень освіти користувача. |
+| PositionAtWork | Позиція на роботі. |
+| TrustFactor | Рівень довіри інших користувачів. |
 
 Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Discord...
 
-### Operations
+#### Operations
 
-1. Сreate KC-Student. <br>
-2. Read KC-Student. <br>
-3. Update KC-Student. <br>
-4. Delete KC-Student. <br>
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
 
-## Component-Object: KC-Educator
+### UserAuthentication
 
-### Attributes
-
-| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
-| :-----------------------------: | :------------------------------------:|
-| Educator ID | Унікальний ідентифікатор викладача. |
-| First Name | Ім’я викладача. |
-| Middle Name | По-батькові викладача. |
-| Last Name | Прізвище викладача. |
-| Type | Тип викладача: лектор, практик, ментор. |
-| Birthday | Дата народження. |
-| Email | Електронна адреса викладача. |
-| Mobile Number | Номер телефону викладача. |
-| CommunicationChannels | Як можна зв'язатися з викладачем: {channel: channel_value; channel: channel_value}. |
-
-Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Discord...
-
-### Operations
-
-1. Сreate KC-Educator. <br>
-2. Read KC-Educator. <br>
-3. Update KC-Educator. <br>
-4. Delete KC-Educator. <br>
-
-## Component-Object: KC-Resource
-
-### Attributes
+#### Attributes
 
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
-| SourceID | Унікальний ідентифікатор джерела. |
-| Branch | Множина споріднених джерел. |
+| User ID | Внутрішній ідентифікатор користувача в системі. |
+| Login | Зовнішній ідентифікатор користувача. |
+| Password | Пароль користувача. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### UserAuthorisation
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Couple ID | Ідентифікатор зв'язку модератора та об'єкта. |
+| User ID | Ідентифікатор поточного модератора об'єкта. |
+| Role | Ідентифікатор поточного модератора об'єкта. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+
+### Permission 
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Permission ID | Унікальний ідентифікатор дозволу доступу. |
+| Role | Роль користувача. |
+| Object Type | Параметр для визначення контексту Object ID. Може набувати значень: resource, exercise, lesson, course, coursetree. |
+| Object ID | Ідентифікатор об'єкту системи. |
+| Action | Дія з об'єктом системи. Може набувати значень: сreate, read, update, delete... | 
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### ResourceMetadata
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| ResourceID | Унікальний ідентифікатор джерела. |
 | Title | Назва джерела. |
-| Description | Зміст/Структура джерела. |
-| Form | Форма джерела. |
-| Work Mode | Рекомендований спосіб опрацювання джерела. |
-| Scope of Work (Measure) | Одиниця виміру. |
-| Scope of Work (Value) | Значення одиниці виміру. |
-| Comments | Коментарі того, хто додав джерело. |
+| Description | Опис джерела - передмова або зміст джерела. |
+| Author | Автор джерела. |
+| Form | Форма джерела. Може набувати значень: book, audio, video, interactive object.  |
+| Scope of Work (Measure) | Одиниця виміру. Може набувати значень: page, second, part.  |
+| Scope of Work (Value) | Значення одиниці виміру. Може набувати значень: [0; +inf]. |
+| Link Type | Контекст Link. Може набувати значень: internal, external. |
+| Link | Посилання на джерело. |
 
-Form: "Книга", "Аудіокнига", "Відео"...
+#### Operations
 
-Work Mode: "Partially", "Full-consistently", "Full-inconsistently".
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
 
-### Operations
+### Exercise
 
-1. Сreate KC-Resource. <br>
-2. Read KC-Resource. <br>
-3. Update KC-Resource. <br>
-4. Delete KC-Resource. <br>
- 
-## Component-Object: KC-Task
-
-### Attributes
+#### Attributes
 
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
-| Task ID | Унікальний ідентифікатор завдання. |
+| Exercise ID | Унікальний ідентифікатор завдання. |
 | Title | Заголовок завдання. |
-| Description | Опис завдання. |
-| Start Date | Дата початку виконання завдання. |
-| Deadline | Очікуваний термін здачі завдання.|
-| Finish Date | Кінець терміну здачі завдання.|
-| Priority | Пріоритет завдання.|
-| Status | Статус завдання: {planned; started; missed; finished.} |
+| Сondition | Умова завдання. |
+| Prompt | Підказка до виконання завдання. |
+| Answer | Відповідь до завдання. |
 
-### Operations
+#### Operations
 
-1. Сreate KC-Resource. <br>
-2. Read KC-Resource. <br>
-3. Update KC-Resource. <br>
-4. Delete KC-Resource. <br>
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
 
-## Component-Object: KC-CourseParticipation
 
-### Attributes
+### Lesson
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Lesson ID | Ідентифікатор навчального заняття. |
+| Lesson Title | Тема навчального заняття. |
+| Lesson Goal | Ціль навчального заняття. |
+| Stage Count | Кількість етапів навчального заняття. |
+| General Required Time | Рекомендований час виконання. Вимірюється в секундах. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### LessonStructure
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Lesson ID | Ідентифікатор навчального заняття. |
+| Stage | Порядковий номер етапу навчального заняття. |
+| Stage Comment | Комментар до етапу навчального заняття. |
+| Equipment Type | Контекст Equipment ID. Може бути: "resource", "exercise", "pass". |
+| Equipment ID | Ідентифікатор Equipment-а: Resource ID, Exercise ID. Ігнорується при Equipment Type = "pass".  |
+| Required Time | Рекомендований час виконання. Вимірюється в секундах. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### Сourse
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Сourse ID | Ідентифікатор курсу. |
+| Сourse Title | Ідентифікатор курсу. |
+| Сourse Description | Ідентифікатор курсу. |
+| Lesson Count | Кількість етапів навчального заняття. |
+| General Required Time | Рекомендований час виконання. Вимірюється в секундах. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### СourseStructure
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Course ID | Ідентифікатор навчального заняття. |
+| Lesson Number | Порядковий номер навчального заняття. |
+| Lesson ID | Ідентифікатор навчального заняття. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### СourseTreeStructure
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Couple ID | Ідентифікатор зв'язку між курсами. |
+| Course Tree ID | Ідентифікатор дерева курсів. |
+| Cource ID | Ідентифікатор поточного курсу. |
+| Next Cource ID | Ідентифікатор наступного курсу. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### СourseTree
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Сourse Tree ID | Ідентифікатор дерева курсів. |
+| Course Tree Title | Заголовок дерева курсів. |
+| Course Tree Description | Опис дерева курсів. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### UserInWork
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Work ID | Ідентифікатор запису про виконання Task-у. |
+| Task Type | Контекст Task ID. Може бути: "lesson", "course". |
+| Task ID | Ідентифікатор Task-у. |
+| User ID | Ідентифікатор користувача. |
+| IsDone | Чи завершено Task?. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### CourseParticipation
+
+#### Attributes
 
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
 | Course ID | Унікальний ідентифікатор курсу. |
-| Student ID | Унікальний ідентифікатор ресурсу. |
+| User ID | Унікальний ідентифікатор ресурсу. |
 
-### Operations
+#### Operations
 
-1. Check if Student in Course. <br>
-2. Get all Student's for Course. <br>
-3. Get all Course's for Student. <br>
-4. Add Student to Course. <br>
-5. Remove Student for Course. <br>
-6. Remove Course for Student's. <br>
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
 
-## Component-Object: KC-Course
-???
+### TransactionHistory
 
-# Security Access Rules
+#### Attributes
 
-"[Student]:= primitive
-[Educator]:= primitive
-[Resource]:= primitive
-[Task]:= primitive
-"[Сourse]:= [Student]'s + [Educator] + [Resource]'s + [Task]'s"
-[Classroom]:= [Student]'s + [Educator]
-[Task] => [Reward] => {Achievement; Role} 
-[Role] => [RoleSystem]
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Transaction ID | Унікальний ідентифікатор транзакції. |
+| Object Type | Контекст Object ID. Може бути: "resource", "exercise", "lesson", "course", "courcetree". |
+| Object ID | Ідентифікатор об'єкта. |
+| Attribute Name | Ім'я зміненого атрибуту. |
+| Attribute Type | Тип значення зміненого атрибуту. |
+| Attribute Previous Value | Попереднє значення зміненого атрибуту. |
+| Attribute New Value | Поточне значення зміненого атрибуту. |
+| Requested Time | Унікальний ідентифікатор ресурсу. |
+| User ID | Ідентифікатор User-а, який запропонував зміни. |
+| User Comment | Коментар користувача, який ініціалізував зміни. |
+| Moderator ID | Ідентифікатор поточного модератора. |
+| Moderator Comment | Коментар поточного модератора. |
+| Approved Status | Унікальний ідентифікатор ресурсу. Може бути: "wait", "yes", "no". |
 
-[Resources in Progress]
-[Classroom]
-[Achievement]
-[Notification]
-[NotificationInbox]
-[ChannelOptions]
-[MessagePattern]
-[Role?]
-[RoleSystem?]
-[RoleSystems?]
-[Reward?]
-[Group?]
-[Participation in Group?]
-[Event?]
-[Involvement in Event]
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### Notification
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| NotificationID | Ідентифікатор сповіщення. |
+| User ID | Ідентифікатор отримувача. |
+| Channel | Канал зв’язку з отримувачем. |
+| Message | Сформоване повідомлення для отримувача. |
+| TimeForSending | Запланований час відправки. |
+| Status | Статус повідомлення. Можливі значення: 0 - не відправлено; 1 - відправлено. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### NotificationInbox
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| NotificationID | Ідентифікатор сповіщення. |
+| Message | Сформоване повідомлення для отримувача. |
+| ReceivedTime | Час отримання повідомлення. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### ChannelOption
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| Option ID | Ідентифікатор сповіщення. |
+| User ID | Ідентифікатор сповіщення. |
+| Channel | Канал сповіщення (telegram, mail etc.). |
+| Channel Parameter | Параметр каналу сповіщення. |
+| Channel Value | Значення параметра каналу сповіщення, вказане користувачем. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### MessagePattern
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| MessagePatternID | Ідентифікатор шаблону повідомлення. |
+| Locale | Локалізація/мова шаблону повідомлення. |
+| Text | Текст шаблону повідомлення. |
+| Count | Кількість параметрів шаблону повідомлення. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
+
+### MessageCreator
+
+#### Attributes
+
+| Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
+| :-----------------------------: | :------------------------------------:|
+| NotificationID | Ідентифікатор сповіщення. |
+| MessagePatternID | Ідентифікатор шаблону повідомлення. |
+| Option Number | Порядковий номер вставного елемента. |
+| Option Value | Значення вставного елемента. |
+
+#### Operations
+
+| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
+| :-----------------------: | :----------: |:-----------------: |
+//TO_DO
