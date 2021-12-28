@@ -82,12 +82,6 @@ Actors: SuspiciousUser (Low Trust Factor), User (Good Trust Factor), BoundedUser
 
 Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Discord...
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### UserAuthentication
 
 #### Attributes
@@ -98,12 +92,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Login | Зовнішній ідентифікатор користувача. |
 | Password | Пароль користувача. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### UserAuthorisation
 
 #### Attributes
@@ -113,13 +101,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Couple ID | Ідентифікатор зв'язку користувача та ролі. |
 | User ID | Ідентифікатор користувача. |
 | Role | Роль користувача. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 
 ### Permission 
 
@@ -132,12 +113,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Object Type | Параметр для визначення контексту Object ID. Може набувати значень: resource, exercise, lesson, course, coursetree. |
 | Object ID | Ідентифікатор об'єкту системи. |
 | Action | Дія з об'єктом системи. Може набувати значень: сreate, read, update, delete... | 
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### Resource
 
@@ -155,12 +130,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Link Type | Контекст Link. Може набувати значень: internal, external. |
 | Link | Посилання на джерело. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### Exercise
 
 #### Attributes
@@ -173,13 +142,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Prompt | Підказка до виконання завдання. |
 | Answer | Відповідь до завдання. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
-
 ### Lesson
 
 #### Attributes
@@ -191,12 +153,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Lesson Goal | Ціль навчального заняття. |
 | Stage Count | Кількість етапів навчального заняття. |
 | General Required Time | Рекомендований час виконання. Вимірюється в секундах. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### LessonStructure
 
@@ -211,12 +167,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Equipment ID | Ідентифікатор Equipment-а: Resource ID, Exercise ID. Ігнорується при Equipment Type = "pass".  |
 | Required Time | Рекомендований час виконання. Вимірюється в секундах. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### Сourse
 
 #### Attributes
@@ -229,12 +179,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Lesson Count | Кількість етапів навчального заняття. |
 | General Required Time | Рекомендований час виконання. Вимірюється в секундах. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### СourseStructure
 
 #### Attributes
@@ -244,12 +188,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Course ID | Ідентифікатор курсу. |
 | Lesson Number | Порядковий номер навчального заняття. |
 | Lesson ID | Ідентифікатор навчального заняття. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### СourseTreeStructure
 
@@ -262,12 +200,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Cource ID | Ідентифікатор поточного курсу. |
 | Next Cource ID | Ідентифікатор наступного курсу. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### СourseTree
 
 #### Attributes
@@ -277,12 +209,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Сourse Tree ID | Ідентифікатор дерева курсів. |
 | Course Tree Title | Заголовок дерева курсів. |
 | Course Tree Description | Опис дерева курсів. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### UserInWork
 
@@ -296,12 +222,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | User ID | Ідентифікатор користувача. |
 | IsDone | Чи завершено Task? |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### CourseParticipation
 
 #### Attributes
@@ -310,12 +230,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | :-----------------------------: | :------------------------------------:|
 | Course ID | Унікальний ідентифікатор курсу. |
 | User ID | Унікальний ідентифікатор користувача. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### TransactionHistory
 
@@ -337,12 +251,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Moderator Comment | Коментар поточного модератора. |
 | Approved Status | Унікальний ідентифікатор ресурсу. Може бути: "wait", "yes", "no". |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### Notification
 
 #### Attributes
@@ -356,12 +264,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | TimeForSending | Запланований час відправки. |
 | Status | Статус повідомлення. Можливі значення: 0 - не відправлено; 1 - відправлено. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### NotificationInbox
 
 #### Attributes
@@ -371,12 +273,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | NotificationID | Ідентифікатор сповіщення. |
 | Message | Сформоване повідомлення для отримувача. |
 | ReceivedTime | Час отримання повідомлення. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### ChannelOption
 
@@ -390,12 +286,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Channel Parameter | Параметр каналу сповіщення. |
 | Channel Value | Значення параметра каналу сповіщення, вказане користувачем. |
 
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
-
 ### MessagePattern
 
 #### Attributes
@@ -406,12 +296,6 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Locale | Локалізація/мова шаблону повідомлення. |
 | Text | Текст шаблону повідомлення. |
 | Count | Кількість параметрів шаблону повідомлення. |
-
-#### Operations
-
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
 
 ### MessageCreator
 
@@ -424,8 +308,109 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Option Number | Порядковий номер вставного елемента. |
 | Option Value | Значення вставного елемента. |
 
-#### Operations
+## UseCase
 
-| Атрибути (Attribute name) | Дія (Action) | Виконавець (Actor) |
-| :-----------------------: | :----------: |:-----------------: |
-//TO_DO
+### Regustration
+
+***Alias:***  Створити обліковий запис.
+
+***Participants:***  Гість, Система.
+
+***Precondition:***  Обліковий запис відсутній.
+
+***Result:***  Підтвердження облікового запису.
+
+***Exception:***
+
+•	EX.001.001. Адресу електронної пошти не введено.
+
+•	EX.001.002. Введено неіснуючу адресу електронної пошти.
+
+•	EX.001.003. Первинний та повторний пароль не збігаються.
+
+***Main Scenario:***
+
+
+### Registration (001)
+
+***Alias:***  Створити обліковий запис.
+
+***Participants:***  Гість, Система.
+
+***Precondition:***  Обліковий запис відсутній.
+
+***Result:***  Підтвердження облікового запису.
+
+***Exception:***
+
+• EX.001.001. Адресу електронної пошти не введено.
+
+• EX.001.002. Введено неіснуючу адресу електронної пошти.
+
+• EX.001.003. Первинний та повторний пароль не збігаються.
+
+***Main Scenario:***
+
+1. Користувач заходить на сторінку реєстрації нового користувача.
+2. Користувач вводить своє ім'я, прізвище, по-батькові, адресу електронної пошти, пароль та пароль повторно.
+3. Користувач натискає на кнопку "Зареєструватися".
+4. Система надсилає листа із підтверджуючим посиланням на вказану адресу (Можливо: EX.001.001; EX.001.002; EX.001.003).
+
+### Registration Approve (002)
+
+***Alias:***  Підтвердити обліковий запис.
+
+***Participants:***  Гість, Система.
+
+***Precondition:***  Здійснено запит на підтвердження облікового запису.
+
+***Result:***  Підтверджений обліковий запис.
+
+***Exception:***
+
+• EX.002.001. Помилка обробки підтвердженого облікового запису.
+
+***Main Scenario:***
+1. Користувач переходить за підтверджуючим посиланням.
+2. Система створює обліковий запис нового користувача (Можливо: EX.002.001).
+
+### Account Update (003)
+
+***Alias:***  Редагувати обліковий запис.
+
+***Participants:***  Користувач, Система.
+
+***Precondition:***  Користувач має обліковий запис.
+
+***Result:***  Зміни в даних облікового запису.
+
+***Exception:***
+
+• EX.003.001. Обліковий запис з такою електронною поштою вже існує.
+
+• EX.003.002. Користувач не підтвердив зміни в обліковому записі.
+
+***Main Scenario:***
+1. Користувач відкриває меню редагування облікового запису.
+2. Користувач редагує обліковий запис.
+3. Система зберігає зміни в обліковому записі. (Можливо: EX.003.001, EX.003.002)
+
+### Account Delete (004)
+
+***Alias:***  Видалити обліковий запис.
+
+***Participants:***  Користувач, Система.
+
+***Precondition:***  Користувач має обліковий запис.
+
+***Result:***  Видалення облікового запису.
+
+***Exception:***
+
+• EX.004.001. Користувач не підтвердив видалення облікового запису.
+
+***Main Scenario:***
+1. Користувач відкриває меню редагування облікового запису.
+2. Користувач натискає кнопку "Видалили обліковий запис".
+3. Система видаляє обліковий запис (Можливо: EX.004.001).
+4. 
