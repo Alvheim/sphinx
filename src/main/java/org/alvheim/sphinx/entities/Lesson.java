@@ -41,7 +41,7 @@ public class Lesson {
   private int stageCount;
 
   @Column(name = "general_required_time")
-  private long generalTimeToPassInSeconds;
+  private Long generalTimeToPassInSeconds;
 
   @OneToMany(mappedBy = "lesson", fetch = FetchType.LAZY)
   private Set<CourseStructure> lessonStructures;
