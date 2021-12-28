@@ -35,15 +35,18 @@
 -зв'язування курсів в галузь освіти.<br>
 
 ## Principles
-Автором курсу може бути будь-хто.<br>
-У кожного курсу безліч авторів.<br>
-У кожного курсу лише один модератор.<br>
-Перший автор - це модератор. Якщо модератор не приймає два тижні зміни, то він звільняється. Найактивніший автор стає модератором. Якщо найактивнішого автора немає, то посада модератор стає вакантною. Будь-який користувач може подати свою кандидатуру на посаду адміністратора. Через тиждень, вибраний випадковим чином, постає модератор. Адміністратор один. Звільняє субадміністраторів та модераторів. Призначає субадміністраторів. Не призначає модераторів. <br>
-Субадміністратори звільняють модераторів.<br>
-Субадміністраторів може бути безліч.<br>
-Адміністратор один. Звільняє субадміністраторів та модераторів. Призначає субадміністраторів. Не призначає модераторів. <br>
-Можна безкоштовно вивчати будь-який курс.<br>
-Фінансова модель: за реєстрацію або за підписку; відсоток від донатів авторам.<br>
+1. Основна бізнес-сутність платформи - курс.<br>
+2. Будь-який курс є безкоштовним.<br> 
+3. Курс включає безліч авторів. Автор курсу - це користувач, який створює та пропонує зміни до курсу.<br>
+4. Автором курсу може бути будь-який користувач.<br> 
+5. Кожен курс має одного і тільки одного модератора. Модератор - це користувач, що має право приймати або відхиляти зміни до курсу, які пропонують автори. Порядок вибору модератора: перший автор; найактивніший автор; користувач, що пройшов курс, та якого вибрали голосуванням; адміністратор. <br>
+6. Субадміністратор - це користувач, що має право звільняти модераторів. Субадміністратор не має права призначати модераторів. Субадміністраторів може бути безліч.<br>
+7. Адміністратор - це користувач, що має право: звільняти модераторів, призначати субадміністраторів, звільняти субадміністраторів. Адміністратор не має права призначати модераторів. Адміністратор може бути лише один.<br>
+
+## Financial Model 
+Варіант 1: одноразова плата за реєстрацію.<br>
+Варіант 2: багаторазова плата за підписку.<br>
+Варіант 3: 0.5-1.5% від донатних коштів авторам.<br>
 
 ## Bussiness Objects
 
@@ -52,7 +55,11 @@ Participation Objects: User, UserAuthentication, UserAuthorisation, Permission.<
 Main Activity Objects: UserInWork, CourseParticipation, ResourceMetadata, Exercise, Lesson, LessonStructure, Сourse, СourseStructure, СourseTree, СourseTreeStructure.<br>
 Additional Activity Objects: TransactionHistory, Notification, NotificationInbox, ChannelOption, MessagePattern, MessageCreator.<br>
 
+![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Alvheim/sphinx/feature/docs/docs/BR-model.puml)
+
 Actors: SuspiciousUser (Low Trust Factor), User (Good Trust Factor), BoundedUser (Broke the Rules), Moderator#ObjectType#ObjectID (Moderator for Object with Type and ID), SubAdministrator, Administrator.<br>
+
+![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Alvheim/sphinx/feature/docs/docs/Empowerment.puml)
 
 ### User
 
@@ -103,9 +110,9 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
-| Couple ID | Ідентифікатор зв'язку модератора та об'єкта. |
-| User ID | Ідентифікатор поточного модератора об'єкта. |
-| Role | Ідентифікатор поточного модератора об'єкта. |
+| Couple ID | Ідентифікатор зв'язку користувача та ролі. |
+| User ID | Ідентифікатор користувача. |
+| Role | Роль користувача. |
 
 #### Operations
 
@@ -132,7 +139,7 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | :-----------------------: | :----------: |:-----------------: |
 //TO_DO
 
-### ResourceMetadata
+### Resource
 
 #### Attributes
 
@@ -217,8 +224,8 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
 | Сourse ID | Ідентифікатор курсу. |
-| Сourse Title | Ідентифікатор курсу. |
-| Сourse Description | Ідентифікатор курсу. |
+| Сourse Title | Назва курсу. |
+| Сourse Description | Опис курсу. |
 | Lesson Count | Кількість етапів навчального заняття. |
 | General Required Time | Рекомендований час виконання. Вимірюється в секундах. |
 
@@ -234,7 +241,7 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
-| Course ID | Ідентифікатор навчального заняття. |
+| Course ID | Ідентифікатор курсу. |
 | Lesson Number | Порядковий номер навчального заняття. |
 | Lesson ID | Ідентифікатор навчального заняття. |
 
@@ -287,7 +294,7 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Task Type | Контекст Task ID. Може бути: "lesson", "course". |
 | Task ID | Ідентифікатор Task-у. |
 | User ID | Ідентифікатор користувача. |
-| IsDone | Чи завершено Task?. |
+| IsDone | Чи завершено Task? |
 
 #### Operations
 
@@ -302,7 +309,7 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
 | Course ID | Унікальний ідентифікатор курсу. |
-| User ID | Унікальний ідентифікатор ресурсу. |
+| User ID | Унікальний ідентифікатор користувача. |
 
 #### Operations
 
@@ -343,7 +350,7 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
 | NotificationID | Ідентифікатор сповіщення. |
-| User ID | Ідентифікатор отримувача. |
+| User ID | Ідентифікатор користувача-отримувача. |
 | Channel | Канал зв’язку з отримувачем. |
 | Message | Сформоване повідомлення для отримувача. |
 | TimeForSending | Запланований час відправки. |
@@ -378,7 +385,7 @@ Channel: Additional Mobile Number, Facebook, Telegram, Instagram, Twitter, Disco
 | Назва атрибуту (Attribute name) | Опис атрибуту (Attribute Description) |
 | :-----------------------------: | :------------------------------------:|
 | Option ID | Ідентифікатор сповіщення. |
-| User ID | Ідентифікатор сповіщення. |
+| User ID | Ідентифікатор користувача. |
 | Channel | Канал сповіщення (telegram, mail etc.). |
 | Channel Parameter | Параметр каналу сповіщення. |
 | Channel Value | Значення параметра каналу сповіщення, вказане користувачем. |
