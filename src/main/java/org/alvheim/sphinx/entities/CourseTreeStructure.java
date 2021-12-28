@@ -26,7 +26,7 @@ public class CourseTreeStructure {
   @Column(name = "id")
   private Long id;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//  @ManyToOne(fetch = FetchType.LAZY, optional = false)
   private Long treeId;
 
   // Don`t really know what kind of relationship to use :(

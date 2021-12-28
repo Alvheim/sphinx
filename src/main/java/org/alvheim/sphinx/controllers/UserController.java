@@ -1,5 +1,6 @@
 package org.alvheim.sphinx.controllers;
 
+import java.util.Map;
 import org.alvheim.sphinx.entities.User;
 import org.alvheim.sphinx.services.impl.UserServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -32,8 +33,8 @@ public class UserController {
   }
 
   @PatchMapping("/{id}")
-  public ResponseEntity<User> replacePartially(@RequestBody User newUser, @PathVariable Long id) {
-    return new ResponseEntity<>(userServiceImpl.replacePartially(newUser, id), HttpStatus.OK);
+  public ResponseEntity<User> replacePartially(@RequestBody Map<String, Object> update, @PathVariable Long id) {
+    return new ResponseEntity<>(userServiceImpl.partialReplace(update, id), HttpStatus.OK);
   }
 
 }
