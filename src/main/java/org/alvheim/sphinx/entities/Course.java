@@ -42,7 +42,7 @@ public class Course {
   private int lessonCount;
 
   @Column(name = "general_required_time")
-  private long generalTimeToPassInSeconds;
+  private Long generalTimeToPassInSeconds;
 
   @ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
   private Set<User> users = new HashSet<>();
