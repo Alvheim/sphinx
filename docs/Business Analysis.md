@@ -55,11 +55,11 @@ Participation Objects: User, UserAuthentication, UserAuthorisation, Permission.<
 Main Activity Objects: UserInWork, CourseParticipation, ResourceMetadata, Exercise, Lesson, LessonStructure, Сourse, СourseStructure, СourseTree, СourseTreeStructure.<br>
 Additional Activity Objects: TransactionHistory, Notification, NotificationInbox, ChannelOption, MessagePattern, MessageCreator.<br>
 
-![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Alvheim/sphinx/feature/docs/docs/BR-model.puml)
+![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Alvheim/sphinx/develop/docs/BR-model.puml)
 
 Actors: SuspiciousUser (Low Trust Factor), User (Good Trust Factor), BoundedUser (Broke the Rules), Moderator#ObjectType#ObjectID (Moderator for Object with Type and ID), SubAdministrator, Administrator.<br>
 
-![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Alvheim/sphinx/feature/docs/docs/Empowerment.puml)
+![uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Alvheim/sphinx/develop/docs/Empowerment.puml)
 
 ### User
 
