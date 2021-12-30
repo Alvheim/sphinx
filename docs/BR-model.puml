@@ -1,0 +1,67 @@
+@startuml
+
+entity User
+entity UserAuthentication
+entity Permission
+entity ResourceMetadata
+entity Exercise
+entity Lesson
+entity LessonStructure
+entity Сourse
+entity СourseStructure
+entity СourseTreeStructure
+entity СourseTree
+entity UserAuthorisation
+entity UserInWork
+entity CourseParticipation
+entity TransactionHistory
+entity Notification
+entity NotificationInbox
+entity ChannelOption
+entity MessagePattern
+entity MessageCreator
+
+User -u- UserAuthentication
+User -l- UserAuthorisation
+User -- UserInWork
+User -- CourseParticipation
+User -d- TransactionHistory
+User -r- Notification
+User -r- NotificationInbox
+User -r- ChannelOption
+
+UserAuthorisation -l- Permission
+
+Permission -d- ResourceMetadata
+Permission -d- Exercise
+Permission -d- Lesson
+Permission -d- Сourse
+Permission -d- СourseTree
+
+Lesson -l- LessonStructure
+LessonStructure -l- ResourceMetadata
+LessonStructure -l- Exercise
+
+Сourse -l- СourseStructure
+СourseStructure -l- Lesson
+
+СourseTree -l- СourseTreeStructure
+СourseTreeStructure -l- Сourse
+
+UserInWork -d- Lesson
+UserInWork -d- Сourse
+
+CourseParticipation -- Сourse
+
+TransactionHistory -u- ResourceMetadata
+TransactionHistory -u- Exercise
+TransactionHistory -u- Lesson
+TransactionHistory -u- Сourse
+TransactionHistory -u- СourseTree
+
+Notification -u- ChannelOption
+Notification -d- NotificationInbox
+
+MessageCreator -l- Notification
+MessagePattern -l- MessageCreator
+@enduml
