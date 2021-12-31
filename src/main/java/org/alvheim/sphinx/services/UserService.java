@@ -5,12 +5,11 @@ import org.alvheim.sphinx.entities.User;
 
 public interface UserService {
 
-  public User save(User newUser);
+  User save(User newUser);
 
-  public User replace(User newUser, Long id);
+  User replace(User newUser, Long id);
 
+  User partialReplace(Map<String, Object> partialUpdates, Long id);
 
-  public User partialReplace(Map<String, Object> partialUpdates, Long id);
-
-
+  void delete(Long id);
 }

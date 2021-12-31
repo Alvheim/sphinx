@@ -37,7 +37,7 @@ public class UserInWork {
 
   //  TODO: kind of relationship
   @Column(name = "user_id")
-  private User user;
+  private Long user;
 
   @Column(name = "id_done")
   private Boolean isDone;

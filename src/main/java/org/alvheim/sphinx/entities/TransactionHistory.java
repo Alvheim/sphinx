@@ -55,9 +55,10 @@ public class TransactionHistory {
   @Column(name = "requested_time")
   private LocalDate requestedTime;
 
-  @OneToOne
+// TODO: fix relationship
+//  @OneToOne
   @Column(name = "user_id")
-  private User user;
+  private Long user;
 
   @Column(name = "user_comment")
   private String userComment;
