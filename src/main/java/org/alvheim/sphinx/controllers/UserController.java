@@ -5,6 +5,7 @@ import org.alvheim.sphinx.entities.User;
 import org.alvheim.sphinx.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,4 +38,9 @@ public class UserController {
     return new ResponseEntity<>(userService.partialReplace(partialUpdates, id), HttpStatus.OK);
   }
 
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> delete(@PathVariable Long id) {
+    userService.delete(id);
+    return ResponseEntity.ok().build();
+  }
 }

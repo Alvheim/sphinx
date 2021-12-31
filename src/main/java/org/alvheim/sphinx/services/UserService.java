@@ -12,5 +12,5 @@ public interface UserService {
 
   public User partialReplace(Map<String, Object> partialUpdates, Long id);
 
-
+  void delete(Long id);
 }
