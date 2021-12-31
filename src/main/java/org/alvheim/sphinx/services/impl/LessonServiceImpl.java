@@ -40,6 +40,7 @@ public class LessonServiceImpl implements LessonService {
         .orElseThrow(() -> new ResourceNotFoundException("No lesson with id: " + id + " was found"));
   }
 
+  @Transactional
   @Override
   public Lesson partialReplace(Map<String, Object> partialUpdates, Long id) {
     Lesson lessonToPatch =
