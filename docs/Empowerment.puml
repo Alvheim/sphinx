@@ -1,0 +1,15 @@
+@startuml
+  actor SuspiciousUser
+  actor BoundedUser
+  actor User
+  actor Moderator
+  actor Subadministrator
+  actor Administrator
+ 
+  User -r-> SuspiciousUser
+  User -d-> BoundedUser
+  Moderator -d-> User
+  Subadministrator -r-> User
+  Administrator -r-> Subadministrator
+
+@enduml
